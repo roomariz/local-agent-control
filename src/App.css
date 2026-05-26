@@ -1,0 +1,276 @@
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #18202f;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.92)),
+    linear-gradient(135deg, #dbeafe 0%, #f8fafc 44%, #dcfce7 100%);
+}
+
+.hero,
+.dashboard,
+.launchers,
+.script-section,
+.deployment {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  gap: 24px;
+  align-items: end;
+  padding: 12px 0 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #111827;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: #111827;
+}
+
+.lede {
+  margin-bottom: 0;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.status-tile,
+.launcher-card,
+.script-section,
+.deployment {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.status-tile {
+  min-width: 0;
+  padding: 16px;
+}
+
+.status-tile.wide,
+.status-tile.safety {
+  grid-column: span 2;
+}
+
+.status-tile span,
+dt {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.status-tile strong,
+dd {
+  overflow-wrap: anywhere;
+}
+
+.status-tile strong {
+  color: #111827;
+  font-size: 1rem;
+}
+
+.launchers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.launcher-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.card-heading,
+.section-heading {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-heading p {
+  margin-bottom: 4px;
+  color: #0f766e;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.card-heading h2,
+.section-heading h2,
+.deployment h2 {
+  font-size: 1.35rem;
+}
+
+.risk {
+  flex: 0 0 auto;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.risk-low {
+  border-color: #86efac;
+  color: #166534;
+  background: #dcfce7;
+}
+
+.risk-medium {
+  border-color: #facc15;
+  color: #854d0e;
+  background: #fef9c3;
+}
+
+.risk-high {
+  border-color: #fca5a5;
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+  color: #334155;
+  line-height: 1.45;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  padding: 14px;
+  color: #dbeafe;
+  background: #172033;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+button {
+  align-self: flex-start;
+  border: 1px solid #0f766e;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ffffff;
+  background: #0f766e;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+button:focus-visible {
+  outline: 3px solid #99f6e4;
+  outline-offset: 2px;
+}
+
+button:hover {
+  background: #115e59;
+}
+
+.script-section,
+.deployment {
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.script-section pre,
+.deployment pre {
+  margin-top: 16px;
+}
+
+.deployment ol {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: #334155;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .hero,
+  .launchers {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .status-tile.wide,
+  .status-tile.safety {
+    grid-column: auto;
+  }
+
+  .card-heading,
+  .section-heading {
+    flex-direction: column;
+  }
+}
