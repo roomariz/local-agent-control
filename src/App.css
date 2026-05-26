@@ -18,6 +18,7 @@ button {
 .hero,
 .dashboard,
 .launchers,
+.router-section,
 .script-section,
 .deployment {
   width: min(1180px, 100%);
@@ -76,6 +77,7 @@ h2 {
 
 .status-tile,
 .launcher-card,
+.router-section,
 .script-section,
 .deployment {
   border: 1px solid #cbd5e1;
@@ -126,6 +128,86 @@ dd {
   gap: 16px;
   min-width: 0;
   padding: 18px;
+}
+
+.router-section {
+  margin-bottom: 18px;
+  padding: 20px;
+}
+
+.router-warning {
+  margin: 8px 0 0;
+  color: #854d0e;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.router-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span,
+.router-preview span {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+textarea,
+input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+  color: #111827;
+  background: #ffffff;
+  font: inherit;
+}
+
+textarea {
+  min-height: 148px;
+  resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #0f766e;
+  outline: 3px solid #ccfbf1;
+}
+
+.router-preview {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.router-preview div {
+  min-width: 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.router-preview strong {
+  display: block;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  color: #111827;
+}
+
+.router-section pre {
+  margin-top: 16px;
 }
 
 .card-heading,
@@ -246,7 +328,8 @@ button:hover {
   }
 
   .hero,
-  .launchers {
+  .launchers,
+  .router-grid {
     grid-template-columns: 1fr;
   }
 
